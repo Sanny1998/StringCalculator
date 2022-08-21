@@ -1,7 +1,7 @@
 import java.util.StringTokenizer;
 
 public class StringCalculator {
-    public static int add(String userGiven)throws Exception{
+    public static int add(String userGiven) throws Exception{
         StringTokenizer token = new StringTokenizer(userGiven,",");
         int sumOfString = 0;
         if(userGiven.isEmpty()){
@@ -20,7 +20,11 @@ public class StringCalculator {
                         throw new Exception("nagative value is not allowed");
                     }else {
                         int number = stringToInt(thisToken);
-                        sumOfString += number;
+                        if(number > 1000){//By this value greater than 1000 ignored
+                            sumOfString += 0;
+                        }else{
+                            sumOfString += number;
+                        }
                     }
                 }else {
                     char value = Character.toLowerCase(nextToken);

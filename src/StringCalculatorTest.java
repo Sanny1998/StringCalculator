@@ -63,4 +63,14 @@ public class StringCalculatorTest{
     public void nagativeValueParse()throws Exception {
          StringCalculator.add("-1");
     }
+
+    /*
+    In this test ,if user enters value greater than 1000 than it will
+    ignore
+     */
+    @Test
+    public void valueGreaterThan1000Ignore()throws Exception {
+        assertEquals(30,StringCalculator.add("10,20,3000"));
+    }
+
 }

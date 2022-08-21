@@ -1,14 +1,15 @@
+import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
-public class StringCalculatorTest {
+public class StringCalculatorTest{
     /*
     In this , we make init method so that we dont need to inititalize
     String calculator in every method,by init method it will create
     new object for StringCalculator
      */
     public StringCalculator calculator;
+    @Before
     public void init(){
         calculator = new StringCalculator();
     }
@@ -17,8 +18,8 @@ public class StringCalculatorTest {
     In this test we check,if string is null than it will give 0 or not
      */
     @Test
-    public void emptyString() {
-        assertEquals(0,calculator.add(""));
+    public void emptyString()throws Exception {
+        assertEquals(0, StringCalculator.add(""));
     }
 
     /*
@@ -26,23 +27,23 @@ public class StringCalculatorTest {
     return that value as sum
      */
     @Test
-    public void oneValueString(){
-        assertEquals(1,calculator.add("1"));
+    public void oneValueString()throws Exception{
+        assertEquals(1, StringCalculator.add("1"));
     }
 
     /*
     In this test case we check ,if string has two digit than its sum
      */
     @Test
-    public void twoValueString(){
-        assertEquals(3,calculator.add("1,2"));
+    public void twoValueString()throws Exception{
+        assertEquals(3, StringCalculator.add("1,2"));
     }
     /*
     In this test we ckeck,if string has multiple digit than its sum
      */
     @Test
-    public void multipleValueString(){
-        assertEquals(15,calculator.add("1,2,3,4,5"));
+    public void multipleValueString()throws Exception{
+        assertEquals(15, StringCalculator.add("1,2,3,4,5"));
     }
 
     /*
@@ -50,7 +51,16 @@ public class StringCalculatorTest {
     sum
      */
     @Test
-    public void stringValueWithCharAndInteger(){
-        assertEquals(214,calculator.add("10,200,a,c"));
+    public void stringValueWithCharAndInteger()throws Exception{
+        assertEquals(213, StringCalculator.add("10,200,c"));
+    }
+
+    /*
+    In this test ,if user enter nagative value in String
+    then it will give exception
+     */
+    @Test
+    public void nagativeValueParse()throws Exception {
+         StringCalculator.add("-1");
     }
 }

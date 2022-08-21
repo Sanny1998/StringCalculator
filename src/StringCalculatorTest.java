@@ -19,7 +19,7 @@ public class StringCalculatorTest{
      */
     @Test
     public void emptyString()throws Exception {
-        assertEquals(0, StringCalculator.add(""));
+        assertEquals(0,StringCalculator.add(""));
     }
 
     /*
@@ -61,7 +61,11 @@ public class StringCalculatorTest{
      */
     @Test
     public void nagativeValueParse()throws Exception {
-         StringCalculator.add("-1");
+         try{
+             StringCalculator.add("-1");
+         }catch(Exception e){
+             assertEquals("nagative is not allowed",e.getMessage());
+         }
     }
 
     /*
@@ -87,6 +91,6 @@ public class StringCalculatorTest{
      */
     @Test
     public void multipleDelimiterInString()throws Exception {
-        assertEquals(3,StringCalculator.add("/;\n1,2"));
+        assertEquals(3,StringCalculator.add("//;\n1,2"));
     }
 }

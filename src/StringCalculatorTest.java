@@ -29,4 +29,12 @@ public class StringCalculatorTest {
     public void oneValueString(){
         assertEquals(1,calculator.add("1"));
     }
+
+    /*
+    In this test case we check ,if string has two digit than its sum
+     */
+    @Test
+    public void twoValueString(){
+        assertEquals(3,calculator.add("1,2"));
+    }
 }

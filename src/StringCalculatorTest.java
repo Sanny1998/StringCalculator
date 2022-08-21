@@ -37,4 +37,12 @@ public class StringCalculatorTest {
     public void twoValueString(){
         assertEquals(3,calculator.add("1,2"));
     }
+    /*
+    In this test we ckeck,if string has multiple digit than its sum
+     */
+    @Test
+    public void multipleValueString(){
+        assertEquals(15,calculator.add("1,2,3,4,5"));
+    }
+
 }

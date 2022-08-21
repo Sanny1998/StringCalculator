@@ -1,5 +1,11 @@
 public class StringCalculator {
     public static int add(String userGiven){
-        return 0;
+        int sumOfString = 0;
+        if(userGiven.isEmpty()){
+            return 0;
+        }else{
+            sumOfString += Integer.parseInt(userGiven);
+            return sumOfString;
+        }
     }
 }

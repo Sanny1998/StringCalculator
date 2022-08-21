@@ -20,4 +20,13 @@ public class StringCalculatorTest {
     public void emptyString() {
         assertEquals(0,calculator.add(""));
     }
+
+    /*
+    In this test i check,if String has only one value than it will
+    return that value as sum
+     */
+    @Test
+    public void oneValueString(){
+        assertEquals(1,calculator.add("1"));
+    }
 }

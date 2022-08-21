@@ -73,4 +73,12 @@ public class StringCalculatorTest{
         assertEquals(30,StringCalculator.add("10,20,3000"));
     }
 
+    /*
+    If user entered any new line character instead as commmas than
+    it will be counted as split delimiter
+     */
+    @Test
+    public void newLineCharacterInsteadOfComma()throws Exception {
+        assertEquals(330,StringCalculator.add("10\n20,300"));
+    }
 }

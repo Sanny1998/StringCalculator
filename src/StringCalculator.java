@@ -2,7 +2,8 @@ import java.util.StringTokenizer;
 
 public class StringCalculator {
     public static int add(String userGiven) throws Exception{
-        StringTokenizer token = new StringTokenizer(userGiven,",");
+        final String delimiter = ",\n";
+        StringTokenizer token = new StringTokenizer(userGiven,delimiter);
         int sumOfString = 0;
         if(userGiven.isEmpty()){
             return 0;

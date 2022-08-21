@@ -81,4 +81,12 @@ public class StringCalculatorTest{
     public void newLineCharacterInsteadOfComma()throws Exception {
         assertEquals(330,StringCalculator.add("10\n20,300"));
     }
+    /*
+    if user entered multiple delimiter than it should be ignored
+    and sum is done only on character or integer
+     */
+    @Test
+    public void multipleDelimiterInString()throws Exception {
+        assertEquals(3,StringCalculator.add("/;\n1,2"));
+    }
 }

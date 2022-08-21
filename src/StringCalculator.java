@@ -16,7 +16,7 @@ public class StringCalculator {
                 char nextToken = thisToken.charAt(0);
 
                 //Character.isDigit():is boolean function which check value is digit or not
-                if (Character.isDigit(nextToken)) {
+                if (Character.isDigit(nextToken)) { //If part is for integer value
                     if(stringToInt(thisToken) < 0){
                         throw new Exception("nagative value is not allowed");
                     }else {
@@ -27,12 +27,14 @@ public class StringCalculator {
                             sumOfString += number;
                         }
                     }
-                }else {
+                }else if(Character.isLetter(nextToken)){ //Else if part is for character value
                     char value = Character.toLowerCase(nextToken);
                     int number = (int)value - 96;
                     sumOfString += number;
-                    }
+                }else{
+                    sumOfString += 0;
                 }
+            }
         }
         return sumOfString;
     }

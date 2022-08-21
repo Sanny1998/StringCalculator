@@ -8,9 +8,15 @@ public class StringCalculator {
             return 0;
         }else{
             while(token.hasMoreTokens()){
-                char nextToken = token.nextToken().charAt(0);
+                //Variable thisToken contains the nextTOken of the StringTokenizer
+                String thisToken = token.nextToken();
+
+                //nextToken cotains the character value of the next token
+                char nextToken = thisToken.charAt(0);
+
+                //Character.isDigit():is boolean function which check value is digit or not
                 if(Character.isDigit(nextToken)){
-                    int number =  (int)nextToken-48;
+                    int number = Integer.parseInt(thisToken);
                     sumOfString += number;
                 }else{
                     char value = Character.toLowerCase(nextToken);

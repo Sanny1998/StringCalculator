@@ -51,6 +51,6 @@ public class StringCalculatorTest {
      */
     @Test
     public void stringValueWithCharAndInteger(){
-        assertEquals(7,calculator.add("1,2,a,c"));
+        assertEquals(214,calculator.add("10,200,a,c"));
     }
 }

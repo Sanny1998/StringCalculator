@@ -8,7 +8,15 @@ public class StringCalculator {
             return 0;
         }else{
             while(token.hasMoreTokens()){
-                sumOfString += Integer.parseInt(token.nextToken());
+                char nextToken = token.nextToken().charAt(0);
+                if(Character.isDigit(nextToken)){
+                    int number =  (int)nextToken-48;
+                    sumOfString += number;
+                }else{
+                    char value = Character.toLowerCase(nextToken);
+                    int number = (int)value - 96;
+                    sumOfString += number;
+                }
             }
             return sumOfString;
         }

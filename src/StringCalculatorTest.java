@@ -22,7 +22,7 @@ public class StringCalculatorTest {
     }
 
     /*
-    In this test i check,if String has only one value than it will
+    In this test i will check,if String has only one value than it will
     return that value as sum
      */
     @Test
@@ -45,4 +45,12 @@ public class StringCalculatorTest {
         assertEquals(15,calculator.add("1,2,3,4,5"));
     }
 
+    /*
+    In this i will test, if any char is present instead of integer than its
+    sum
+     */
+    @Test
+    public void stringValueWithCharAndInteger(){
+        assertEquals(7,calculator.add("1,2,a,c"));
+    }
 }
